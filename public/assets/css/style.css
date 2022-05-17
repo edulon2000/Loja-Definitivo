@@ -1,0 +1,21 @@
+.top{
+    float: left;
+    height: 120px;
+    border-bottom: 1px solid rgb(0, 255, 85);
+}
+.box {
+    min-height: 300px;    
+    float: left;    
+}   
+.linha-vertical {
+    height: 400px;   
+    float: left;
+    border-left: 1px solid rgb(0, 255, 85);
+    box-sizing: border-box;
+}
+.footer{
+    border-top: 1px solid rgb(0, 255, 85);
+    float: left;
+    height: 100px;
+    background-color: black;
+}
