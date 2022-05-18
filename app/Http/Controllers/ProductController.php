@@ -57,7 +57,11 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::get();
+
+
+        //dd($product);
+        return view('products.show', compact('product'));
     }
 
     /**
@@ -74,6 +78,7 @@ class ProductController extends Controller
 
        return view('products.edit', ['product' => $product, 'categories' => $categories]);
     }
+
 
     /**
      * Update the specified resource in storage.
