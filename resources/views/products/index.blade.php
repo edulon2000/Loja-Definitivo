@@ -16,8 +16,8 @@
                 <nav class="side-navbar">
                     <!--Sidebar Navidation Menus-->
                     <ul class="list-unstyled py-4">                        
-                        <li class="sidebar-item"><hr><i class='fa fa-home' style='font-size:12px'><a class="ml-2" href="{{ route('products.create') }}">Cadastro de Produto</a></i><hr></li>                                    
-                        <li class="sidebar-item"><hr><i class='fa fa-home' style='font-size:12px'><a class="ml-2" href="{{ route('categories.create') }}">Cadastro de Categotias</a></i><hr></li>                                    
+                        <li class="sidebar-item"><hr><i class='fa fa-home' style='font-size:12px'><a class="ml-2" href="{{ route('products.create') }}">Produto</a></i><hr></li>                                    
+                        <li class="sidebar-item"><hr><i class='fa fa-home' style='font-size:12px'><a class="ml-2" href="{{ route('categories.create') }}">Categotias</a></i><hr></li>                                    
                     </ul>
                 </nav>
             </div>
