@@ -40,7 +40,41 @@
                 <a class="btn btn-primary" href="{{ route('products.create') }}">Cadastrar Produto</a>
                 <!--{{ Redirect::to('products/create') }}-->
             @endif
-            <h1>Testando</h1>
+            <h1>Produtos</h1>
+            <hr>
+            <form action="{{ route('products.search') }}" method="post" form="form form-inline"
+                value="{{ $name['name'] ?? '' }}">
+                @csrf
+                <input type="text" class="form-control col-2" name="filter" placeholder="Nome: ">
+                <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
+            </form>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Preço</th>
+                        <th scope="col">Opções</th>
+                    </tr>
+                </thead>
+                @foreach ($products as $product)
+                    <tbody>
+                        <tr>
+                            <th scope="row">{{ $product->id }}</th>
+                            <td>{{ $product->name }}</td>
+                            <td>{{ $product->price }}</td>
+                            <td><a class="btn btn-outline-success btn-sm"
+                                    href="{{ route('products.edit', $product->id) }}">Editar
+                                </a>
+                                <a class="btn btn-outline-danger  btn-sm"
+                                    href="{{ route('products.destroy', $product->id) }}">Deletar
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                @endforeach
+            </table>
         </div>
         <div class="col-12 footer">
             <div class="container">

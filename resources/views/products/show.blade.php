@@ -13,29 +13,48 @@
 </head>
 
 <body>
-    /*
-    Falta alterar as rotas do botão Apagar e Editar
-
-    */
     <h1>Produtos</h1>
-    @foreach ($product as $products)
-        <div class="row justify-content-sm-center">
-            <div class="col-5">
-                <hr>
-                <ul class="list-group">
-                    <li class="list-group-item align-middle">{{ $products->name }} <a
-                            class="btn btn-outline-danger float-right btn-sm"
-                            href="{{ route('products.create') }}">Apagar
+    <hr>
+    <form action="{{ route('products.search') }}" method="post" form="form form-inline"
+        value="{{ $name['name'] ?? '' }}">
+        @csrf
+        <input type="text" class="form-control col-2" name="filter" placeholder="Nome: ">
+        <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Opções</th>
+            </tr>
+        </thead>
+        @foreach ($product as $products)
+            <tbody>
+                <tr>
+                    <th scope="row">{{ $products->id }}</th>
+                    <td>{{ $products->name }}</td>
+                    <td>{{ $products->price }}</td>
+                    <td><a class="btn btn-outline-success btn-sm"
+                            href="{{ route('products.edit', $products->id) }}">Editar
                         </a>
-                        <a class="btn btn-outline-success float-right btn-sm"
-                            href="{{ route('products.create') }}">Editar
+                        <a class="btn btn-outline-danger  btn-sm"
+                            href="{{ route('products.destroy', $products->id) }}">Deletar
                         </a>
-                        </p>
-                </ul>
-            </div>
-            <hr>
-        </div>
-    @endforeach
+                    </td>
+                </tr>
+            </tbody>
+        @endforeach
+    </table>
+
+    @if (isset($name))
+        {!! $products->appends($name)->links() !!}
+    @else
+        {!! $products->links() !!}
+    @endif
+
 
 </body>
 
