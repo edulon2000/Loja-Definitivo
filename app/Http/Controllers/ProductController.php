@@ -57,11 +57,11 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::get();
+        $products = Product::paginate(3);
 
 
-        //dd($product);
-        return view('products.show', compact('product'));
+       // dd($products);
+        return view('products.show', compact('products'));
     }
 
     /**
@@ -121,9 +121,9 @@ class ProductController extends Controller
      public function search(Request $request)
      {
 
-        $name = $request->except('_token');
-        $products =  $this->repository->search($request->name);
+        $filter = $request->filter;
+        $products = Product::search($filter)->get();
 
-        return view('products.index', ['products' => $products, 'filter' => $name]);
+        return view('products.index', ['products' => $products, 'filter' => $filter]);
      }
 }

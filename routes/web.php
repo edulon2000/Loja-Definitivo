@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::any('products/search', 'ProductController@search')->name('products.search');
+Route::any('products/search', [ProductController::class,'search'])->name('products.search');
 Route::get('/', [ProductController::class, 'index']);
 Route::resource('products', ProductController::class);
 Route::resource('categories', CategoryController::class);

@@ -12,14 +12,13 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function search($name =null){
-        $result = $this->where(function($query) use($name){
-            if($name){
-              $query->where('name', 'LIKE', "%($name)%");
-            }
-        })->paginate(4);
 
-        return $result;
+    public function scopeSearch($query, $name =null){
+        if (!is_null($name)) {
+            return $query->where('name', 'like' , '%' . $name . '%');
+        }
+
+        return $query;
      }
 }
 

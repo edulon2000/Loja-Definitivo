@@ -31,17 +31,17 @@
                 <th scope="col">Opções</th>
             </tr>
         </thead>
-        @foreach ($product as $products)
+        @foreach ($products as $product)
             <tbody>
                 <tr>
-                    <th scope="row">{{ $products->id }}</th>
-                    <td>{{ $products->name }}</td>
-                    <td>{{ $products->price }}</td>
+                    <th scope="row">{{ $product->id }}</th>
+                    <td>{{ $product->name }}</td>
+                    <td>{{ $product->price }}</td>
                     <td><a class="btn btn-outline-success btn-sm"
-                            href="{{ route('products.edit', $products->id) }}">Editar
+                            href="{{ route('products.edit', $product->id) }}">Editar
                         </a>
                         <a class="btn btn-outline-danger  btn-sm"
-                            href="{{ route('products.destroy', $products->id) }}">Deletar
+                            href="{{ route('products.destroy', $product->id) }}">Deletar
                         </a>
                     </td>
                 </tr>

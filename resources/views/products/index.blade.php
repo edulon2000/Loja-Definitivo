@@ -33,6 +33,7 @@
                 </ul>
             </nav>
         </div>
+
         <div class="col-10 linha-vertical overflow-auto">
             @if (count($products) > 0)
             @else
@@ -42,10 +43,11 @@
             @endif
             <h1>Produtos</h1>
             <hr>
-            <form action="{{ route('products.search') }}" method="post" form="form form-inline"
+            <form action="{{ route('products.search') }}" method="post" form="form"
                 value="{{ $name['name'] ?? '' }}">
                 @csrf
                 <input type="text" class="form-control col-2" name="filter" placeholder="Nome: ">
+
                 <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
             </form>
 
