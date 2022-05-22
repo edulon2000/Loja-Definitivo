@@ -69,9 +69,14 @@
                             <td><a class="btn btn-outline-success btn-sm"
                                     href="{{ route('products.edit', $product->id) }}">Editar
                                 </a>
+                                <form>
                                 <a class="btn btn-outline-danger  btn-sm"
-                                    href="{{ route('products.destroy', $product->id) }}">Deletar
+                                    href= "{{ route('products.destroy', $product->id) }}"
+                                    href="deletar?id=1" onclick="return confirm('Tem certeza que deseja deletar este registro?')">Deletar
+                                    
+                                    @method('Delete')
                                 </a>
+                                </form>
                             </td>
                         </tr>
                     </tbody>
