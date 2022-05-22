@@ -19,4 +19,4 @@ Route::any('products/search', [ProductController::class,'search'])->name('produc
 Route::get('/', [ProductController::class, 'index']);
 Route::resource('products', ProductController::class);
 Route::resource('categories', CategoryController::class);
-
+Route::delete('/event/{id}',[EventController::class, 'destroy']);
