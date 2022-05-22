@@ -72,7 +72,7 @@
                                 <form>
                                 <a class="btn btn-outline-danger  btn-sm"
                                     href= "{{ route('products.destroy', $product->id) }}"
-                                    href="deletar?id=1" onclick="return confirm('Tem certeza que deseja deletar este registro?')">Deletar
+                                    href="deletar?id=1" onclick="return confirm('Tem certeza que deseja deletar este produto?')">Deletar
                                     
                                     @method('Delete')
                                 </a>
