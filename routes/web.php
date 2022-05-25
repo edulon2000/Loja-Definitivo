@@ -20,3 +20,4 @@ Route::get('/', [ProductController::class, 'index']);
 Route::resource('products', ProductController::class);
 Route::resource('categories', CategoryController::class);
 Route::get('products/{product}',[ProductController::class, 'destroy']);
+Route::get('categories/{category}',[CategoryController::class, 'destroy']);

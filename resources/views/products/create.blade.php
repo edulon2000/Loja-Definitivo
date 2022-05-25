@@ -16,7 +16,7 @@
                 <nav class="side-navbar">
                     <!-- Sidebar Navidation Menus-->
                     <ul class="list-unstyled py-4">                        
-                        <li class="sidebar-item"><hr><i class='fa fa-home' style='font-size:12px'><a class="ml-2" href="{{ route('products.index') }}">Home</a></i><hr></li>                                    
+                        <li class="sidebar-item"><hr><i class='fab fa-codepen' style='font-size:12px'><a class="ml-2" href="{{ route('products.index') }}">Produtos</a></i><hr></li>                                    
                     </ul>
                 </nav>
             </div>
@@ -32,28 +32,28 @@
                             <div class="col-lg-7 col-md-5 col-sm-12">
                                 <label>Nome:</label>
                                 <div class="input-group input-group-sm mb-3 ">
-                                    <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-user" style="font-size:12px"></i></span>
+                                    <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-pen" style="font-size:12px"></i></span>
                                     <input type="text" id="name" name="name" class="form-control" placeholder="Digite o nome do produto" required>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-5 col-sm-12">
                                 <label>Preço:</label>
                                 <div class="input-group input-group-sm mb-3">
-                                    <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-file" style="font-size:12px"></i></span>
+                                    <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-money-check-alt" style="font-size:12px"></i></span>
                                     <input type="text" id="price" name="price" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-3 col-sm-12">
                                 <label>Quantidade:</label>
                                 <div class="input-group input-group-sm mb-3">
-                                    <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-file" style="font-size:12px"></i></span>
+                                    <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-times" style="font-size:12px"></i></span>
                                     <input type="text" id="quantity" name="quantity" class="form-control" required>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-5 col-sm-12">
                                 <label>Categorias:</label>
                                 <div class="input-group input-group-sm mb-3">
-                                    <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fa fa-file" style="font-size:12px"></i></span>
+                                    <span class="input-group-text" id="inputGroup-sizing-sm"><i class="fas fa-list" style="font-size:12px"></i></span>
                                     <select class="form-control" id="category" name="category">
                                         <option selected>Selecionar</option>
                                         @foreach($categories as $category)
@@ -107,6 +107,8 @@
         </div>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="{{asset('assets/js/jquery.js')}}"></script>
+        <script src="{{asset('assets/js/jquery.mask.min.js')}}"></script>
         <script src="{{asset('assets/js/bootstrap.js')}}"></script>    
+        <script src="{{asset('assets/js/format-money.js')}}"></script>
     </body>
 </html>

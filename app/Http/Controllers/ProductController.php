@@ -42,7 +42,7 @@ class ProductController extends Controller
     {
         $product = new Product();
         $product->name = $request->name;
-        $product->price = $request->price;
+        $product->price  = str_replace(',', '.', str_replace('.', '', $request->price));
         $product->quantity = $request->quantity;
         $product->categoriesFK = $request->category;
         $product->save();
@@ -92,7 +92,7 @@ class ProductController extends Controller
         $product = Product::find($id);
 
         $product->name = $request->name;
-        $product->price = $request->price;
+        $product->price = str_replace(',', '.', str_replace('.', '', $request->price));
         $product->save();
 
         return redirect()->route('products.index');
